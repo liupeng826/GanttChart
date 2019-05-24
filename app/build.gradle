@@ -1,0 +1,29 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+
+    defaultConfig {
+        applicationId "com.p.android"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:23.4.0'
+    implementation files('libs/gson-2.2.4.jar')
+
+    implementation group: 'joda-time', name: 'joda-time', version: '2.9.1'
+    implementation 'com.orhanobut:logger:1.15'
+}
